@@ -157,3 +157,4 @@ C:\Users\Cansu\source\repos\IdentityChatEmail\IdentityChatEmail\obj\Debug\net8.0
 C:\Users\Cansu\source\repos\IdentityChatEmail\IdentityChatEmail\obj\Debug\net8.0\IdentityChatEmail.pdb
 C:\Users\Cansu\source\repos\IdentityChatEmail\IdentityChatEmail\obj\Debug\net8.0\IdentityChatEmail.genruntimeconfig.cache
 C:\Users\Cansu\source\repos\IdentityChatEmail\IdentityChatEmail\obj\Debug\net8.0\ref\IdentityChatEmail.dll
+C:\Users\Cansu\source\repos\IdentityChatEmail\IdentityChatEmail\obj\Debug\net8.0\IdentityChatEmail.sourcelink.json

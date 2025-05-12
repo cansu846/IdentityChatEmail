@@ -1,4 +1,4 @@
-﻿@model RegisterViewModel
+﻿@model LoginViewModel
 @{
     Layout = null;
 }
@@ -45,43 +45,25 @@
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
 
-                                <a class="text-center" href="index.html"> <h4>Register</h4></a>
+                                <a class="text-center" href="index.html"> <h4>Login</h4></a>
 
                                 <form class="mt-5 mb-5 login-input" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" asp-for="UserName" placeholder="UserName" required>
-                                        <span class="text-danger" asp-validation-for="UserName"></span>
+                                        <input type="text" class="form-control" asp-for="Username" placeholder="UserName" required>
+                                        <span class="text-danger" asp-validation-for="Username"></span>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" asp-for="Name"  placeholder="Name" required>
-                                        <span class="text-danger" asp-validation-for="Name"></span>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" asp-for="Surname"  placeholder="Surname" required>
-                                        <span class="text-danger" asp-validation-for="Surname"></span>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" asp-for="Email"  placeholder="Email" required>
-                                        <span class="text-danger" asp-validation-for="Email"></span>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" asp-for="Address" placeholder="Address" required>
-                                        <span class="text-danger" asp-validation-for="Address"></span>
-
-                                    </div>
+                                  
                                     <div class="form-group">
                                         <input type="password" class="form-control" asp-for="Password" placeholder="Password" required>
                                         <span class="text-danger" asp-validation-for="Password"></span>
 
                                     </div>
+
                                     <div class="text-danger" asp-validation-summary="ModelOnly">
                                     </div>
-                                    <button class="btn login-form__btn submit w-100">Sign Up</button>
+                                    <button class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">You have account <a href="/Login/UserLogin" class="text-primary border-bottom-1">Sign In </a> now</p>
+                                <p class="mt-5 login-form__footer">Yo dont have account <a href="/Register/CreateUser" class="text-primary border-bottom-1">Sign Up </a> now</p>
                             </div>
                         </div>
                     </div>
@@ -101,15 +83,10 @@
     <script src="~/quixlab-master/js/gleek.js"></script>
     <script src="~/quixlab-master/js/styleSwitcher.js"></script>
 
-@*     Asagdaki kodlar dogrulamanın gösterilmesi için gecerli
+    @*     Asagdaki kodlar dogrulamanın gösterilmesi için gecerli
  *@    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 
 </body>
 </html>
-
-
-
-
-
