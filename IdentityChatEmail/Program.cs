@@ -14,6 +14,11 @@ builder.Services.AddDbContext<EmailContext>();
 builder.Services.AddIdentity<AppUser, IdentityRole>().
     AddEntityFrameworkStores<EmailContext>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/UserLogin"; // ?? buraya giri? sayfan?z?n path’ini yaz?n
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

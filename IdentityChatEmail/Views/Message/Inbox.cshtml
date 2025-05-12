@@ -1,0 +1,67 @@
+﻿@using IdentityChatEmail.Entities
+@model List<Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_AppLoyout.cshtml";
+    var subStringLength = 0;
+
+}
+<div class="email-list m-t-0">
+    @foreach (var item in Model)
+    {
+        if (item.MessageDetail.Length > 10)
+            subStringLength = 10;
+        else
+        {
+            subStringLength = item.MessageDetail.Length;
+        }
+        <div class="message">
+            <a href="email-read.html">
+                <div class="col-mail col-mail-1">
+                    <div class="email-checkbox">
+                        <input type="checkbox" id="chk2">
+                        <label class="toggle" for="chk2"></label>
+                    </div><span class="star-toggle ti-star"></span>
+                </div>
+                <div class="col-mail col-mail-2">
+                    <div class="subject">
+                        @item.MessageDetail.Substring(0, subStringLength)
+                    </div>
+                    <div class="date">@item.SendDate.ToShortDateString()</div>
+                </div>
+            </a>
+        </div>
+    }
+
+
+</div>
+@*
+<table class="table table-bordered">
+
+
+@foreach(var item in Model)
+{
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Sender Email</th>
+            <th>Subject</th>
+            <th>Is Read</th>
+            <th>Detail</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@item.MessageId</td>
+            <td>@ViewBag.FullName</td>
+            <td>@item.SenderEmail</td>
+            <td>@item.Subject</td>
+            <td>@item.IsRead</td>
+            <td>@item.MessageDetail</td>
+        </tr>
+    </tbody>
+}
+
+</table> *@
