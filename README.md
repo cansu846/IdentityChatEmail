@@ -59,8 +59,8 @@ Arama işlemi AJAX ile yapılır, sayfa yenilenmeden sonuçlar listelenir</p>
 - UserManager ve SignInManager sınıfları ile kontrol edilir
 
 
-📸 Ekran Görüntüleri
-<hr/>
+📸 <Ekran Görüntüleri
+
 ![Screenshot 2025-05-13 180000](https://github.com/user-attachments/assets/92a2ae48-1bdc-4f17-86f3-ee38f37261b5)
 ![Screenshot 2025-05-13 180010](https://github.com/user-attachments/assets/b339bcb4-5b0a-4222-8a58-e2723c1d3b0b)
 ![Screenshot 2025-05-13 180122](https://github.com/user-attachments/assets/b444167d-94ce-4783-a80c-616ddb1999d4)
