@@ -70,5 +70,5 @@ UserManager ve SignInManager sınıfları ile kontrol edilir
 ![Screenshot 2025-05-13 180204](https://github.com/user-attachments/assets/1e9f96b0-2c77-4583-9172-b33093036560)
 ![Screenshot 2025-05-13 180155](https://github.com/user-attachments/assets/7e2bfac3-b24e-43b8-b5c9-a776d5bad85f)
 ![Screenshot 2025-05-13 181128](https://github.com/user-attachments/assets/6cfd74b8-c3e6-4a63-9b41-f19753c15222)
-![Screenshot 2025-05-13 185113](https://github.com/user-attachments/assets/abc15d57-dbbd-4fc9-a6fd-92c8d22900b4)
+![Screenshot 2025-05-13 193025](https://github.com/user-attachments/assets/61f02222-206e-42f3-a302-82b0690ea148)
 
