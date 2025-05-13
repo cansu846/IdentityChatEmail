@@ -1,61 +1,62 @@
 📧 IdentityChatEmail Uygulaması
 
-IdentityChatEmail, ASP.NET Core MVC ve Entity Framework Core kullanılarak geliştirilmiş bir e-posta/messaging uygulamasıdır. Kullanıcılar sisteme kayıt olabilir, giriş yapabilir, mesaj gönderebilir, gelen kutularını görüntüleyebilir ve gelen/gönderilen mesajlara dair detayları takip edebilir.
+<p>IdentityChatEmail, ASP.NET Core MVC ve Entity Framework Core kullanılarak geliştirilmiş bir e-posta/messaging uygulamasıdır. Kullanıcılar sisteme kayıt olabilir, giriş yapabilir, mesaj gönderebilir, gelen kutularını görüntüleyebilir ve gelen/gönderilen mesajlara dair detayları takip edebilir.</p>
 
 🚀 Özellikler
 
 ✅ Kimlik Doğrulama (Authentication)
 
-Kullanıcı kayıt (Register)
+- Kullanıcı kayıt (Register)
 
-Kullanıcı girişi (Login)
+- Kullanıcı girişi (Login)
 
-Oturum kapatma (Logout)
+- Oturum kapatma (Logout)
 
-ASP.NET Core Identity kullanılmıştır
+- ASP.NET Core Identity kullanılmıştır
 
 ✉️ Mesajlaşma Sistemi
 
-Mesaj gönderme
+- Mesaj gönderme
 
-Gelen mesajların listelenmesi (Inbox)
+- Gelen mesajların listelenmesi (Inbox)
 
-Gönderilen mesajlar (Sendbox)
+- Gönderilen mesajlar (Sendbox)
 
-Mesaj detayları (okunup okunmadı bilgisi dahil)
+- Mesaj detayları (okunup okunmadı bilgisi dahil)
 
-Mesajın okunma durumu: Okundu / Okunmadı şeklinde takip edilir
+- Mesajın okunma durumu: Okundu / Okunmadı şeklinde takip edilir
 
 🔍 Arama Özelliği
 
-Arama çubuğu kullanılarak mesajlar gönderen e-posta ve konu (subject) bazında filtrelenebilir
+<p>Arama çubuğu kullanılarak mesajlar gönderen e-posta ve konu (subject) bazında filtrelenebilir
 
-Arama işlemi AJAX ile yapılır, sayfa yenilenmeden sonuçlar listelenir
+Arama işlemi AJAX ile yapılır, sayfa yenilenmeden sonuçlar listelenir</p>
 
 👤 Kullanıcı Profili
 
-Kullanıcının kişisel bilgileri görüntülenebilir
+- Kullanıcının kişisel bilgileri görüntülenebilir
 
-Kullanıcıya özel inbox/sendbox bilgileri header’da gösterilir
+- Kullanıcıya özel inbox/sendbox bilgileri header’da gösterilir
 
 🛠️ Kullanılan Teknolojiler
 
-ASP.NET Core MVC (.NET 6+)
+- ASP.NET Core MVC (.NET 6+)
 
-Entity Framework Core (Code First Yaklaşımı)
+- Entity Framework Core (Code First Yaklaşımı)
 
-Microsoft Identity
+- Microsoft Identity
 
-Bootstrap (Responsive UI)
+- Bootstrap (Responsive UI)
 
-jQuery / AJAX
+- jQuery / AJAX
+- 
 🔐 Identity Özeti
 
-AppUser sınıfı IdentityUser’dan türetilmiştir
+- AppUser sınıfı IdentityUser’dan türetilmiştir
 
-Giriş, kayıt, şifre doğrulama gibi işlemler hazır olarak gelir
+- Giriş, kayıt, şifre doğrulama gibi işlemler hazır olarak gelir
 
-UserManager ve SignInManager sınıfları ile kontrol edilir
+- UserManager ve SignInManager sınıfları ile kontrol edilir
 
 
 📸 Ekran Görüntüleri
