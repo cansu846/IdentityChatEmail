@@ -15,6 +15,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="~/quixlab-master/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -263,7 +265,7 @@
                         <a href="/Message/Inbox" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-inbox font-18 align-middle mr-2"></i> <span class="nav-text">Inbox <span class="badge badge-primary badge-sm float-right m-t-5 ml-2">198</span> </span>  </a>
                     </li>
                     <li>
-                        <a href="/Message/Senbox" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i> <span class="nav-text">Sentbox <span class="badge badge-primary badge-sm float-right m-t-5 ml-2">198</span> </span>  </a>
+                        <a href="/Message/Sendbox" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-paper-plane font-18 align-middle mr-2"></i> <span class="nav-text">Sendbox <span class="badge badge-primary badge-sm float-right m-t-5 ml-2">198</span> </span>  </a>
                     </li>
                     <li>
                         <a href="#" class="list-group-item border-0 text-primary p-r-0"><i class="fa fa-star-o font-18 align-middle mr-2"></i> <span class="nav-text">Important</span>  </a>
@@ -290,22 +292,6 @@
                         <div class="card">
                             <div class="card-body">
                                 @RenderBody()
-                                <!-- panel -->
-                                <div class="row mt-5">
-                                    <div class="col-7 ">
-                                        <div class="text-left">1 - 20 of 568</div>
-                                    </div>
-                                    <div class="col-5">
-                                        <div class="btn-group float-right">
-                                            <button class="btn btn-gradient" type="button">
-                                                <i class="fa fa-angle-left"></i>
-                                            </button>
-                                            <button class="btn btn-dark" type="button">
-                                                <i class="fa fa-angle-right"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -339,6 +325,7 @@
     <script src="~/quixlab-master/js/settings.js"></script>
     <script src="~/quixlab-master/js/gleek.js"></script>
     <script src="~/quixlab-master/js/styleSwitcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

@@ -52,8 +52,8 @@ namespace IdentityChatEmail.Controllers
             {
                 ViewBag.Email = user.Email;
                 ViewBag.FullName = user.Name + " " + user.Surname;
-                var senbox = _emailContext.Messages.Where(x => x.SenderEmail == user.Email).ToList();
-                //var inbox = _emailContext.Messages.ToList();
+                var senbox = _emailContext.Messages.Where(x => x.SenderEmail != null && x.SenderEmail == user.Email).ToList() ;
+                var inbox = _emailContext.Messages.ToList();
 
                 return View(senbox);
             }
@@ -72,13 +72,25 @@ namespace IdentityChatEmail.Controllers
             Message message = new Message {
                 SenderEmail = userLogin.Email,
                 RecieverEmail = messageViewModel.RecieverEmail,
+                RecieverFullName = messageViewModel.RecieverFullName,
                 Subject = messageViewModel.Subject,
                 MessageDetail = messageViewModel.MessageDetail,
                 SendDate = DateTime.Now
             };
             _emailContext.Messages.Add(message);
             _emailContext.SaveChanges();
+            TempData["SuccessMessage"] = "İşlem başarıyla tamamlandı!";
             return RedirectToAction("Sendbox", "Message");
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> MessageDetail(int id)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            ViewBag.senderEmail = user.Email;
+            var existMessage = _emailContext.Messages.Find(id);
+            
+            return View(existMessage);
         }
     }
 }

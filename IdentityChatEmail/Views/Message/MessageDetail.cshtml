@@ -1,0 +1,81 @@
+﻿@using IdentityChatEmail.Entities
+@model Message
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/Shared/_MessageLoyout.cshtml";
+
+}
+
+<div class="toolbar" role="toolbar">
+    <div class="btn-group m-b-20">
+        <button type="button" class="btn btn-light">
+            <i class="fa fa-archive"></i>
+        </button>
+        <button type="button" class="btn btn-light">
+            <i class="fa fa-exclamation-circle"></i>
+        </button>
+        <button type="button" class="btn btn-light">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+    <div class="btn-group m-b-20">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-folder"></i>  <b class="caret m-l-5"></b>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript: void(0);">Social</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>  <a class="dropdown-item" href="javascript: void(0);">Updates</a>
+            <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+        </div>
+    </div>
+    <div class="btn-group m-b-20">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-tag"></i>  <b class="caret m-l-5"></b>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript: void(0);">Updates</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+            <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+        </div>
+    </div>
+    <div class="btn-group m-b-20">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            More <span class="caret m-l-5"></span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript: void(0);">Mark as Unread</a>  <a class="dropdown-item" href="javascript: void(0);">Add to Tasks</a>  <a class="dropdown-item"
+            href="javascript: void(0);">Add Star</a>  <a class="dropdown-item" href="javascript: void(0);">Mute</a>
+        </div>
+    </div>
+</div>
+<div class="read-content">
+    <div class="media pt-5">
+        <img class="mr-3 rounded-circle" src="images/avatar/1.jpg">
+        <div class="media-body">
+            @if (ViewBag.senderEmail == Model.SenderEmail && ViewBag.senderEmail!=null)
+            {
+                <h5 class="m-b-3">Reciever Fullname: @Model?.RecieverFullName</h5>
+                <p class="m-b-2">Reciever Email: @Model?.RecieverEmail</p>
+                <p class="m-b-2">@Model?.SendDate</p>
+            }
+            else
+            {
+                <h5 class="m-b-3"> Sender Fullname: @Model?.SenderFullName</h5>
+                <h5 class="m-b-3">@Model?.SenderEmail</h5>
+                <p class="m-b-2">@Model?.SendDate</p>
+            }
+          
+        </div>
+
+    </div>
+    <hr>
+    <div class="media mb-4 mt-1">
+        <div class="media-body">
+            <h4 class="m-0 text-primary">Subject: @Model?.Subject
+        </div>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control h-150px" rows="6" asp-for="MessageDetail" placeholder="MessageDetail"></textarea>
+    </div>
+    <hr>
+  
+</div>
+
