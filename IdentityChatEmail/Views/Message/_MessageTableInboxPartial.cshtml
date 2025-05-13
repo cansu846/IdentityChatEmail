@@ -1,0 +1,44 @@
+﻿
+@{
+    var count = 0;
+}
+<table class="table table-striped verticle-middle">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Full Name</th>
+            <th>Sender Email</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Is Read</th>
+            <th>Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr class="table-active table-primary">
+                <td>@count</td>
+                <td>@ViewBag.FullName</td>
+                <td>@item.SenderEmail</td>
+                <td>@item.Subject</td>
+                <td>
+                    <p>@item.SendDate.ToShortDateString() - @item.SendDate.ToShortTimeString()</p>
+                </td>
+                <td>
+                    @if (item.IsRead == false)
+                    {
+                        <a class="btn btn-outline-success">Change to true</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-warning">Change to false</a>
+                    }
+
+                </td>
+                <td><a class="btn btn-primary" href="/Message/MessageDetail/@item.MessageId">View Detail</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

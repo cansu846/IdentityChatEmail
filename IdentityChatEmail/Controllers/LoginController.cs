@@ -30,7 +30,7 @@ namespace IdentityChatEmail.Controllers
                 var result = await _signInManger.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, true, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Message");
+                    return RedirectToAction("MyProfile", "Profile");
                 }
                 else
                 {
@@ -39,6 +39,13 @@ namespace IdentityChatEmail.Controllers
                 }
             }
                 return View();
+        }
+
+        [HttpGet]   
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManger.SignOutAsync(); 
+            return RedirectToAction("UserLogin","Login");  
         }
     }
 }

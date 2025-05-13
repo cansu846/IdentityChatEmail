@@ -56,7 +56,7 @@
                 <p class="m-b-2">Reciever Email: @Model?.RecieverEmail</p>
                 <p class="m-b-2">@Model?.SendDate</p>
             }
-            else
+            @if(Model.SenderEmail!=null)
             {
                 <h5 class="m-b-3"> Sender Fullname: @Model?.SenderFullName</h5>
                 <h5 class="m-b-3">@Model?.SenderEmail</h5>

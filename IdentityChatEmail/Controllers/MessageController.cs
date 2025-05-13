@@ -4,11 +4,13 @@ using IdentityChatEmail.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace IdentityChatEmail.Controllers
 {
-    [Route("Message/[action]")]
+    [Route("[controller]/[action]")]
+    [Authorize]
     public class MessageController : Controller
     {
         private readonly EmailContext _emailContext;
@@ -25,7 +27,7 @@ namespace IdentityChatEmail.Controllers
             return View();
         }
 
-        [Authorize]
+      
         [HttpGet]
         public async Task<IActionResult> Inbox()
         {
@@ -71,6 +73,7 @@ namespace IdentityChatEmail.Controllers
             var userLogin = await _userManager.FindByNameAsync(User.Identity.Name);
             Message message = new Message {
                 SenderEmail = userLogin.Email,
+                SenderFullName = userLogin.Name + " " + userLogin.Surname,
                 RecieverEmail = messageViewModel.RecieverEmail,
                 RecieverFullName = messageViewModel.RecieverFullName,
                 Subject = messageViewModel.Subject,
@@ -79,8 +82,9 @@ namespace IdentityChatEmail.Controllers
             };
             _emailContext.Messages.Add(message);
             _emailContext.SaveChanges();
-            TempData["SuccessMessage"] = "İşlem başarıyla tamamlandı!";
-            return RedirectToAction("Sendbox", "Message");
+            TempData["SuccessMessage"] = "Message send successfully!";
+            //return RedirectToAction("Sendbox", "Message");
+            return View();
         }
 
         [HttpGet("{id}")]
@@ -92,5 +96,48 @@ namespace IdentityChatEmail.Controllers
             
             return View(existMessage);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> SearchMessageForInbox(string searchTerm)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user == null) return Unauthorized();
+
+            var query = _emailContext.Messages
+                .Where(m => m.RecieverEmail == user.Email);
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                query = query.Where(m => m.Subject.Contains(searchTerm) || m.SenderEmail.Contains(searchTerm));
+            }
+
+            var filteredMessages = query
+                .OrderByDescending(m => m.SendDate)
+                .ToList();
+
+            return PartialView("_MessageTableInboxPartial", filteredMessages);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SearchMessageForSendbox(string searchTerm)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user == null) return Unauthorized();
+
+            var query = _emailContext.Messages
+                .Where(m => m.SenderEmail == user.Email);
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                query = query.Where(m => m.Subject.Contains(searchTerm) || m.RecieverEmail.Contains(searchTerm));
+            }
+
+            var filteredMessages = query
+                .OrderByDescending(m => m.SendDate)
+                .ToList();
+
+            return PartialView("_MessageTableSendboxPartial", filteredMessages);
+        }
+
     }
 }
