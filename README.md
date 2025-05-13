@@ -70,7 +70,6 @@ Arama işlemi AJAX ile yapılır, sayfa yenilenmeden sonuçlar listelenir</p>
 ![Screenshot 2025-05-13 181107](https://github.com/user-attachments/assets/8680c49b-af99-45b5-9c18-3303d11e6075)
 ![Screenshot 2025-05-13 185113](https://github.com/user-attachments/assets/8e39db8c-989e-4d62-8047-5642fefbeed4)
 ![Screenshot 2025-05-13 180734](https://github.com/user-attachments/assets/b140991b-2049-4400-9d12-d99901c490a0)
-![Screenshot 2025-05-13 185113](https://github.com/user-attachments/assets/8e39db8c-989e-4d62-8047-5642fefbeed4)
 ![Screenshot 2025-05-13 180808](https://github.com/user-attachments/assets/68796e81-8606-4c6e-bb10-fc74afcb8800)
 ![Screenshot 2025-05-13 180845](https://github.com/user-attachments/assets/a89a08b1-d643-4824-bcdb-f6c70a376d52)
 ![Screenshot 2025-05-13 181128](https://github.com/user-attachments/assets/b4f20e0f-f9ec-4b9e-80e5-1ca6c4e70d6a)
